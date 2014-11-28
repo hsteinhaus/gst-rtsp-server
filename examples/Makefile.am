@@ -17,7 +17,10 @@ endif
 
 
 noinst_PROGRAMS += test-launch2
+noinst_PROGRAMS += test-launch-tcp
 
 test-launch2$(EXEEXT):
-	echo "Foobar!!!!" > /tmp/hello.txt
 	gcc -o test-launch2 test-launch.c -I /usr/include/gstreamer-1.0 -I /usr/include/glib-2.0/ -I /usr/lib/arm-linux-gnueabihf/glib-2.0/include -L /usr/lib/arm-linux-gnueabihf/ -lglib-2.0 -lgstreamer-1.0 -lgobject-2.0 -lgstrtspserver-1.0
+
+test-launch-tcp$(EXEEXT):
+	gcc -o test-launch-tcp test-launch-tcp.c -I /usr/include/gstreamer-1.0 -I /usr/include/glib-2.0/ -I /usr/lib/arm-linux-gnueabihf/glib-2.0/include -L /usr/lib/arm-linux-gnueabihf/ -lglib-2.0 -lgstreamer-1.0 -lgobject-2.0 -lgstrtspserver-1.0
